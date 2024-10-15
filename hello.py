@@ -63,3 +63,22 @@ print(model.predict(features))
 
 
 # %%
+# After training your model
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+import numpy as np
+
+# Your existing model training code
+xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=0.20, random_state=42)
+model = DecisionTreeClassifier()
+model.fit(xtrain, ytrain)
+
+# Save the trained model using pickle
+import pickle
+
+with open("fraud_detection_model.pkl", "wb") as file:
+    pickle.dump(model, file)
+
+print("Model saved as fraud_detection_model.pkl")
+
+# %%
