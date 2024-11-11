@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import pickle
-import sklearn
 # Load the trained model
 with open("fraud_detection_model.pkl", "rb") as file:
     model = pickle.load(file)
